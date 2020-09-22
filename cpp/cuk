@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int cuk;
+int dziec;
+int wynik;
+int zostalo;
+
+int main()
+{
+    cout<<"ile cukierkow: ";
+    cin>>cuk;
+    cout<<"ile dzieci: ";
+    cin>>dziec;
+    wynik=cuk/(dziec-1);
+    cout<<"Tyle cukierkow dla dziecka: "<<wynik<<endl;
+    zostalo=cuk-(wynik*(dziec-1));
+    cout<<"Dla jana zostalo "<<zostalo<<" cukierkow";
+    
+
+    return 0;
+}
