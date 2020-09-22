@@ -18,6 +18,5 @@ int main()
     zostalo=cuk-(wynik*(dziec-1));
     cout<<"Dla jana zostalo "<<zostalo<<" cukierkow";
     
-
     return 0;
 }
