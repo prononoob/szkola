@@ -2,10 +2,7 @@
 
 using namespace std;
 
-int cuk;
-int dziec;
-int wynik;
-int zostalo;
+int cuk, dziec, wynik, zostalo;
 
 int main()
 {
