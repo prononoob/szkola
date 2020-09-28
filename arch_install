@@ -1,0 +1,43 @@
+loadkeys pl
+ip link
+ping
+timedatectl set-ntp true
+fdisk
+    EFI system filesystem (at least 260 MiB) /dev/sda1
+    Linux swap (More than 512 MiB) /dev/sda2
+    Linux x86-64 root (the rest of the disk) /dev/sda3
+w
+mkfs.fat -F32 /dev/sda1
+mkswap /dev/sda2
+swapon /dev/sda2
+mkfs.ext4 /dev/sda3
+mount /dev/sda3 /mnt
+pacstrap /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+# hwclock --systohc
+pacman -S nano
+uncomment en_US.UTF-8 UTF-8
+locale-gen
+KEYMAP=pl >>>> /etc/vconsole.conf
+myhostname >>>> /etc/hostname
+/etc/hosts: \/
+    127.0.0.1	localhost
+    ::1		localhost
+    127.0.1.1	myhostname.localdomain	myhostname
+psswd
+useradd -m username
+passwd username
+pacman -S sudo
+EDITOR=nano visudo
+pacman -S grub
+pacman -S  efibootmgr dosfstools os-prober mtools
+mkdir /boot/EFI
+mount /dev/sda1 /boot/EFI
+grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+pacman -S networkmanager
+systemctl enable NetworkManager
+exit
+umount /mnt
