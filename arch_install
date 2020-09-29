@@ -18,7 +18,7 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 # hwclock --systohc
 pacman -S nano
-uncomment en_US.UTF-8 UTF-8 in /etc/locale.conf
+uncomment en_US.UTF-8 UTF-8 in /etc/locale.gen
 locale-gen
 KEYMAP=pl >>>> /etc/vconsole.conf
 myhostname >>>> /etc/hostname
@@ -26,7 +26,7 @@ myhostname >>>> /etc/hostname
     127.0.0.1	localhost
     ::1		localhost
     127.0.1.1	myhostname.localdomain	myhostname
-psswd
+passwd
 useradd -m username
 passwd username
 pacman -S sudo
