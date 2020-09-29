@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+string login, haslo;
+
+int main()
+{
+    cout << "Podaj login: ";
+    cin >> login;
+    cout << "Podaj haslo: ";
+    cin >> haslo;
+
+    if ((login=="poprawny")&&(haslo=="poprawne"))
+    {
+        cout << "Zalogowano";
+    }
+    else cout << "Niepoprawne login lub haslo!";
+    return 0;
+}
