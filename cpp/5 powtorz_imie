@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int x;
+string y;
+
+int main()
+{
+    cout << "Podaj imie: ";
+    cin >> y;
+    cout << "Ile razy powtorzyc: ";
+    cin >> x;
+    for(int i=1;i<=x;i++)
+    {
+        cout <<i << ". " << y << endl;
+    }
+    return 0;
+}
