@@ -16,7 +16,7 @@ pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
-# hwclock --systohc
+hwclock --systohc
 pacman -S nano
 uncomment en_US.UTF-8 UTF-8 in /etc/locale.gen
 locale-gen
