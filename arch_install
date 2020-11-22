@@ -1,6 +1,3 @@
-loadkeys pl
-ip link
-ping
 timedatectl set-ntp true
 fdisk
     EFI system filesystem (at least 260 MiB) /dev/sda1
